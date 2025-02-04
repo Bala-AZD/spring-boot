@@ -16,13 +16,13 @@ jobs:
  build:
    runs-on: ubuntu-latest
    steps:
-     - name: Checkout Code
-       uses: actions/checkout@v3
-     - name: SonarQube Code Analysis
-       uses: sonarsource/sonarqube-scan-action@master
-       env:
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         SONAR_HOST_URL: "https://sonarcloud.io"
+    # - name: Checkout Code
+     #  uses: actions/checkout@v3
+    # - name: SonarQube Code Analysis
+     #  uses: sonarsource/sonarqube-scan-action@master
+     #  env:
+       #  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # SONAR_HOST_URL: "https://sonarcloud.io"
      - name: Docker Login
        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
      - name: Build and Push Docker Image
